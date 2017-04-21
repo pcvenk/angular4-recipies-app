@@ -14,3 +14,20 @@
 .navbar-light .navbar-toggler {
   border: none;
 }
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: transparent !important;
+}
+
+.btn-secondary:focus {
+  background-color: transparent;
+  border-color: transparent !important;
+  outline: none;
+}
+
+.btn-secondary:active {
+  background-color: transparent;
+  border-color: transparent !important;
+  outline: none;
+}
