@@ -1,0 +1,16 @@
+.navbar-toggler {
+  margin-top:5px;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  outline:0;
+}
+
+.navbar {
+  background-color: #00bcd4;
+}
+
+.navbar-light .navbar-toggler {
+  border: none;
+}
