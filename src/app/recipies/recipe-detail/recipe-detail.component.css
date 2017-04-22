@@ -1,3 +1,13 @@
-.container {
-  margin-top: 27px;
+h1 {
+  margin-bottom: 20px;
 }
+
+.dropdown {
+  margin-left: 15px;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+
