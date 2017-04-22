@@ -1,0 +1,19 @@
+.btn {
+  border-radius: 0;
+  margin-top: 10px;
+}
+
+.card {
+  margin-top: 20px;
+  border-radius: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0, 0.15),
+              0 6px 6px rgba(0,0,0, 0.13);
+}
+
+.card-img-top {
+  border-radius: 0;
+}
+
+.zero-padding {
+  padding: 0px !important;
+}
