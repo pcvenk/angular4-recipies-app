@@ -1,12 +1,12 @@
-<app-header></app-header>
+<app-header (selectedFeature)="onSelectedFeature($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col col-sm-12">
       <h1 class="display-4">
         {{title}}
       </h1>
-      <app-recipies></app-recipies>
-      <app-shopping-list></app-shopping-list>
+      <app-recipies *ngIf="loadedFeature === 'recipe'"></app-recipies>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>

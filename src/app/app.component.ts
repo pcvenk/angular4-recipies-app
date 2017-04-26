@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CookBook';
+
+  loadedFeature = 'recipe';
+
+  onSelectedFeature(feature: string) {
+    this.loadedFeature = feature;
+  }
 }
