@@ -21,14 +21,8 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <div class="card" *ngFor="let recipe of recipes">
-      <img class="card-img-top img-fluid" src="{{ recipe.imagePath }}">
-      <div class="card-block">
-        <h4 class="card-title text-center">{{ recipe.name }}</h4>
-        <p class="card-text">{{ recipe.description }}</p>
-        <a href="#" class="btn btn-outline-primary btn-sm pull-right">Details</a>
-      </div>
-      <app-recipe-item></app-recipe-item>
-    </div>
+    <app-recipe-item *ngFor="let recipe of recipes"
+                     [recipe]="recipe">
+    </app-recipe-item>
   </div>
 </div>
