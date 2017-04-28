@@ -8,8 +8,10 @@ import { Ingredient } from "../../shared/ingrident.model";
 })
 export class ShoppingEditComponent implements OnInit {
 
+  //viewChild enables the local reference to the input fields
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('amountInput') amountInputRef: ElementRef;
+
   @Output() newIngredient = new EventEmitter<Ingredient>();
 
   constructor() { }
@@ -18,11 +20,13 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   addIngridient() {
+
+    console.log(this.nameInputRef);
     const name = this.nameInputRef.nativeElement.value;
     const amount = this.amountInputRef.nativeElement.value;
-    const addedIngridient = new Ingredient(name, amount);
+    const addedIngredient = new Ingredient(name, amount);
 
-    this.newIngredient.emit(addedIngridient);
+    this.newIngredient.emit(addedIngredient);
   }
 
 }
