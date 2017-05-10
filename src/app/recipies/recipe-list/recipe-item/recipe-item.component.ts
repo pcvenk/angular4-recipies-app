@@ -20,13 +20,13 @@ export class RecipeItemComponent implements OnInit {
 
   @Input() recipe: Recipe;
 
-  showMore() {
-    this.recipeService.onSelected.emit(this.recipe);
-  }
-
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+  }
+
+  showMore() {
+    this.recipeService.onSelected.emit(this.recipe);
   }
 
 }
