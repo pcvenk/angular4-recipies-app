@@ -22,8 +22,7 @@
 <div class="row">
   <div class="col-sm-12">
     <app-recipe-item *ngFor="let recipeEl of recipes"
-                     [recipe]="recipeEl"
-                     (recipeDetails)="recipeSelected(recipeEl)">
+                     [recipe]="recipeEl">
     </app-recipe-item>
   </div>
 </div>
