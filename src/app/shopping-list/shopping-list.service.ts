@@ -10,6 +10,7 @@ export class ShoppingListService {
   ];
 
   getIngredients() {
+    //grabbing a copy of the array
     return this.ingredients.slice();
   }
 
