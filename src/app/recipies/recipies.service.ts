@@ -20,7 +20,7 @@ export class RecipeService {
     new Recipe(
       'Big Juicy Burger',
       'Burger for the hungry ones',
-      'https://en.wikipedia.org/wiki/Umami_Burger#/media/File:Umami_Burger_hamburger.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/5/5a/Burger_King_Steakhouse_XT.jpg',
       [
         new Ingredient('Meat', 1),
         new Ingredient('Buns', 2)
