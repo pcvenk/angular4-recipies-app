@@ -1,8 +1,39 @@
-<div class="card">
-  <img class="card-img-top img-fluid" src="{{ recipe.imagePath }}">
-  <div class="card-block">
-    <h4 class="card-title text-center">{{ recipe.name }}</h4>
-    <p class="card-text">{{ recipe.description }}</p>
-    <a href="#" class="btn btn-outline-primary btn-sm pull-right" (click)="showMore()">Details</a>
-  </div>
-</div>
+<!--<div class="card">-->
+  <!--<img class="card-img-top img-fluid" src="{{ recipe.imagePath }}">-->
+  <!--<div class="card-block">-->
+    <!--<h4 class="card-title text-center">{{ recipe.name }}</h4>-->
+    <!--<p class="card-text">{{ recipe.description }}</p>-->
+    <!--<a href="#" class="btn btn-outline-primary btn-sm pull-right" (click)="showMore()">Details</a>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<ul class="list-group">-->
+  <!--<a href="#" class="list-group-item clearfix" (click)="showMore()">-->
+    <!--<li class="list-group-item">-->
+      <!--<img src="{{ recipe.imagePath }}">-->
+      <!--<h4>{{ recipe.name }}</h4>-->
+      <!--<p>{{ recipe.description }}</p>-->
+    <!--</li>-->
+  <!--</a>-->
+<!--</ul>-->
+
+<!--todo fix the pull-right issue!!!!-->
+
+  <a
+    href="#"
+    class="list-group-item list-group-item-action clearfix"
+    (click)="showMore()">
+    <div class="float-sm-left">
+      <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+      <p class="list-group-item-text">{{ recipe.description }}</p>
+    </div>
+    <div class="float-sm-right">
+      <img
+        [src]="recipe.imagePath"
+        alt="{{ recipe.name }}"
+        class="p-2">
+    </div>
+  </a>
+
+
+
