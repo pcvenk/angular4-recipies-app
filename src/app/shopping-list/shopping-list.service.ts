@@ -23,4 +23,10 @@ export class ShoppingListService {
   //   this.ingredients.push(ingredient);
   // }
 
+  addIngredients(ingredients: Ingredient[]) {
+    for (let ingredient of ingredients) {
+      this.addNewIngredient(ingredient);
+    }
+  }
+
 }

@@ -10,4 +10,6 @@ h1 {
   border-radius: 0;
 }
 
-
+a .dropdown-item {
+  cursor: pointer;
+}
