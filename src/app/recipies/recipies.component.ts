@@ -1,6 +1,7 @@
-import { Component, OnInit} from '@angular/core';
-import { RecipeService } from "./recipies.service";
+import { Component, OnInit } from '@angular/core';
 import { Recipe } from "./recipie.model";
+
+import { RecipeService } from "./recipies.service";
 
 @Component({
   selector: 'app-recipies',

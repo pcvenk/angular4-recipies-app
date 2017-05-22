@@ -21,13 +21,13 @@
 }
 
 .btn-secondary:focus {
-  background-color: transparent;
+  background-color: #008397 !important;
   border-color: transparent !important;
   outline: none;
 }
 
 .btn-secondary:active {
-  background-color: transparent;
+  background-color: #008397 !important;
   border-color: transparent !important;
   outline: none;
 }
