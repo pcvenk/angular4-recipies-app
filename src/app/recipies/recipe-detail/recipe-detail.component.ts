@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe } from "../recipie.model";
 import { Ingredient } from "../../shared/ingrident.model";
 import { RecipeService } from "../recipies.service";
+import {ActivatedRoute, Params} from "@angular/router";
 
 
 @Component({
@@ -11,11 +12,18 @@ import { RecipeService } from "../recipies.service";
 })
 export class RecipeDetailComponent implements OnInit {
 
-  @Input() selectedRecipe: Recipe;
+  selectedRecipe: Recipe;
+  id: number;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService,
+              private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.actRoute.params.subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+      }
+    )
   }
 
   toShoppinglist(ingredients: Ingredient[]) {
