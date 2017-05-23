@@ -2,6 +2,7 @@ import {Component, OnInit } from '@angular/core';
 
 import { Recipe } from '../recipie.model';
 import { RecipeService } from '../recipies.service';
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-recipe-list',
@@ -10,6 +11,7 @@ import { RecipeService } from '../recipies.service';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
+  id: number;
 
   constructor(private recipeService: RecipeService) {
   }
