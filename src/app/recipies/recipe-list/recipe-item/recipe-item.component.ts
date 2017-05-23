@@ -18,6 +18,7 @@ export class RecipeItemComponent implements OnInit {
   //reference to the recipe model in the shared folder
 
   @Input() recipe: Recipe;
+  @Input() index: number;
 
   ngOnInit() {
   }
