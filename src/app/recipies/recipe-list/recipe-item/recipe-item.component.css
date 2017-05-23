@@ -3,3 +3,8 @@ img {
   width: 60px;
   border-radius: 30px;
 }
+
+a.list-group-item-info.active {
+  background-color: #00a7bf;
+  border-color: #00a7bf;
+}
