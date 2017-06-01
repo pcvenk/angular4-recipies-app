@@ -1,13 +1,15 @@
 <div class="row">
   <div class="col-sm-12">
-    <form>
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
       <div class="row">
         <div class="col-sm-7 form-group">
           <label for="name">Name</label>
           <input type="text"
                  id="name"
                  class="form-control"
-                 #nameInput>
+                 name="name"
+                 ngModel
+          >
         </div>
 
         <div class="col-sm-3 form-group one">
@@ -15,15 +17,17 @@
           <input type="number"
                  id="amount"
                  class="form-control"
-                 #amountInput>
+                 name="amount"
+                 ngModel
+          >
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-          <button class="btn btn-outline-info" (click)="addIngridient()">Add</button>
-          <button class="btn btn-outline-warning">Clear</button>
-          <button class="btn btn-outline-danger">Delete</button>
+          <button class="btn btn-outline-info" type="submit">Add</button>
+          <button class="btn btn-outline-warning" type="button">Clear</button>
+          <button class="btn btn-outline-danger" type="button">Delete</button>
         </div>
       </div>
     </form>
