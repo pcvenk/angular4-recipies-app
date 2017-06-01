@@ -30,4 +30,8 @@ export class ShoppingListService {
     }
   }
 
+  getIngredient(index: number) {
+    return this.ingredients[index];
+  }
+
 }
