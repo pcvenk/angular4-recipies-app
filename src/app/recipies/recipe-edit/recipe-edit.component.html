@@ -1,7 +1,10 @@
 <form [formGroup]="editRecipe" (ngSubmit)="onSubmit()" class="m-2">
   <div class="row">
     <div class="col col-sm-12">
-      <button class="btn btn-outline-info" type="submit">Save</button>
+      <button
+        class="btn btn-outline-info"
+        [disabled]="!editRecipe.valid"
+        type="submit">Save</button>
       <button class="btn btn-outline-danger" type="button">Cancel</button>
     </div>
   </div>
