@@ -70,8 +70,8 @@ export class RecipeEditComponent implements OnInit {
     //getting form values
     const newRecipe = new Recipe(
       this.editRecipe.value['name'],
-      this.editRecipe.value['imagePath'],
       this.editRecipe.value['description'],
+      this.editRecipe.value['imagePath'],
       this.editRecipe.value['ingredients']
     );
 
