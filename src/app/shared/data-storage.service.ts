@@ -16,7 +16,8 @@ export class DataStorageService {
    this.http.get('https://cook-book-5a0b1.firebaseio.com/recipes.json')
      .subscribe(
        (response: Response) => {
-         const recipes: Recipe[] = response;
+         const recipes: Recipe[] = response.json();
+         this.recipeService.setRecipes(recipes);
        }
      )
  }
