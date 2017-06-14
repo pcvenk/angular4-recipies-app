@@ -14,12 +14,22 @@ export class DataStorageService {
 
  getRecipes() {
    this.http.get('https://cook-book-5a0b1.firebaseio.com/recipes.json')
-     .subscribe(
+     .map(
        (response: Response) => {
          const recipes: Recipe[] = response.json();
-         this.recipeService.setRecipes(recipes);
+         for (let recipe of recipes) {
+           if (!recipe['ingredients']) {
+             recipe['ingredients'] = [];
+           }
+         }
+         return recipes;
        }
      )
+     .subscribe(
+       (recipes: Recipe[]) => {
+         this.recipeService.setRecipes(recipes);
+       }
+     );
  }
 
 }
