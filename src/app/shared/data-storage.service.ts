@@ -1,5 +1,7 @@
+// /<reference path="../../../node_modules/rxjs/add/operator/map.d.ts"/>
 import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
+import "rxjs/Rx";
 
 import {RecipeService} from "../recipies/recipies.service";
 import {Recipe} from "../recipies/recipie.model";
