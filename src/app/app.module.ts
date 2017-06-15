@@ -18,6 +18,8 @@ import { RecipeStartComponent } from './recipies/recipe-start/recipe-start.compo
 import { RecipeEditComponent } from './recipies/recipe-edit/recipe-edit.component';
 import { RecipeService } from "./recipies/recipies.service";
 import {DataStorageService} from "./shared/data-storage.service";
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {DataStorageService} from "./shared/data-storage.service";
     ShoppingEditComponent,
     DropDownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
