@@ -13,13 +13,19 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  errorMsg = '';
 
   onSignup(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
 
     this.authService.signUp(email, password);
+    this.authService.error.subscribe(
+      (error) => {
+        console.log(error['message']);
+        this.errorMsg = error['message'];
+      }
+    )
   }
 
 }

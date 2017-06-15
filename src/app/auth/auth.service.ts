@@ -1,14 +1,14 @@
 import * as firebase from 'firebase';
-import {Injectable} from "@angular/core";
+import {Subject} from "rxjs/Subject";
 
-@Injectable()
+
 export class AuthService {
-  error: any;
+  error = new Subject<any>();
   signUp(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .catch(
         (err) => {
-          this.error = err;
+          this.error.next(err);
         }
       );
   }
