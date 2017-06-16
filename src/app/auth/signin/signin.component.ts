@@ -11,6 +11,8 @@ export class SigninComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
+  response = '';
+
   ngOnInit() {
   }
 
@@ -19,6 +21,12 @@ export class SigninComponent implements OnInit {
     const password = form.value.password;
 
     this.authService.signIn(email, password);
+    this.authService.signInRes.subscribe(
+      (res) => {
+        console.log(res);
+        this.response = res;
+      }
+    );
   }
 
 }
