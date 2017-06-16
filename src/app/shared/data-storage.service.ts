@@ -5,16 +5,26 @@ import "rxjs/Rx";
 
 import {RecipeService} from "../recipies/recipies.service";
 import {Recipe} from "../recipies/recipie.model";
+import {AuthService} from "../auth/auth.service";
 
 @Injectable()
 export class DataStorageService {
- constructor(private http: Http, private recipeService: RecipeService ) {}
+ constructor(private http: Http,
+             private recipeService: RecipeService,
+             private authService: AuthService ) {}
 
  storeRecipes() {
    return this.http.put('https://cook-book-5a0b1.firebaseio.com/recipes.json', this.recipeService.getRecipes());
  }
 
  getRecipes() {
+   let tk = '';
+   this.authService.getToken()
+     .then(
+       (token: string) => {
+         tk = token;
+       }
+     );
    this.http.get('https://cook-book-5a0b1.firebaseio.com/recipes.json')
      .map(
        (response: Response) => {
