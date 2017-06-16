@@ -6,6 +6,7 @@ export class AuthService {
   error = new Subject<any>();
   response = new Subject<any>();
   signInRes = new Subject<any>();
+  signInErr = new Subject<any>();
 
   signUp(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -32,6 +33,7 @@ export class AuthService {
       .catch(
         (err) => {
           console.log(err);
+          this.signInErr.next(err['message']);
         }
       );
   }
