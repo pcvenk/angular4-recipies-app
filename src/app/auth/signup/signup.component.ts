@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
   errorMsg = '';
+  successMsg = '';
 
   onSignup(form: NgForm) {
     const email = form.value.email;
@@ -25,7 +26,13 @@ export class SignupComponent implements OnInit {
         console.log(error['message']);
         this.errorMsg = error['message'];
       }
-    )
+    );
+    this.authService.response.subscribe(
+      (response) => {
+        console.log(response);
+        this.successMsg = response;
+      }
+    );
   }
 
 }
