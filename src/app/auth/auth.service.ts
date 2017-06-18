@@ -1,6 +1,9 @@
 import * as firebase from 'firebase';
 import {Subject} from "rxjs/Subject";
+import {Router} from "@angular/router";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class AuthService {
 
   error = new Subject<any>();
@@ -8,6 +11,8 @@ export class AuthService {
   signInRes = new Subject<any>();
   signInErr = new Subject<any>();
   token: string;
+
+  constructor(private router: Router) {}
 
   signUp(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -29,6 +34,7 @@ export class AuthService {
         (res) => {
           console.log(res);
           this.signInRes.next(`${res['email']} successfully signed in!`);
+          this.router.navigate(['/recipes']);
           firebase.auth().currentUser.getToken()
             .then(
               (token: string) => {

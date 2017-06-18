@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {AuthService} from "../auth.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signin',
@@ -10,8 +9,7 @@ import {Router} from "@angular/router";
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private authService: AuthService,
-              private router: Router) { }
+  constructor(private authService: AuthService) { }
 
   response = '';
   error = '';
@@ -36,8 +34,6 @@ export class SigninComponent implements OnInit {
         this.error = err;
       }
     );
-
-    this.router.navigate(['/recipes'])
   }
 
 }
