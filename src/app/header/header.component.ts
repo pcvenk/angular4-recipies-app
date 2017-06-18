@@ -25,4 +25,8 @@ export class HeaderComponent {
   onFetch() {
     this.dataStorage.getRecipes();
   }
+
+  onLogOut() {
+    this.authService.logOut();
+  }
 }

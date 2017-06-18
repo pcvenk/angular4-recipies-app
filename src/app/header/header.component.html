@@ -37,13 +37,19 @@
       </ul>
     </ng-template>
 
+    <ul class="nav navbar-nav ml-auto" *ngIf="authService.isAuthenticated()">
+      <li>
+        <a class="nav-link" style="cursor: pointer;" (click)="onLogOut()">Log Out</a>
+      </li>
+    </ul>
+
+    <!-- [ngIf] used without the star beacuse you need to bind with several properties -->
     <ng-template [ngIf]="authService.isAuthenticated()">
       <div class="dropdown ml-auto">
         <a class="btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuLink"
            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Manage
         </a>
-
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" style="cursor: pointer" (click)="onFetch()">Fetch Data</a>
           <a class="dropdown-item" style="cursor: pointer" (click)="onSave()">Save Data</a>
