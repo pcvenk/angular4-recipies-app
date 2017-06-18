@@ -37,11 +37,15 @@
       </ul>
     </ng-template>
 
-    <ul class="nav navbar-nav ml-auto" *ngIf="authService.isAuthenticated()">
-      <li>
-        <a class="nav-link" style="cursor: pointer;" (click)="onLogOut()">Log Out</a>
-      </li>
-    </ul>
+    <!-- todo needs to be pulled right-->
+    <ng-template [ngIf]="authService.isAuthenticated()">
+      <ul class="nav navbar-nav">
+        <li>
+          <a class="nav-link" style="cursor: pointer;" (click)="onLogOut()">Log Out</a>
+        </li>
+      </ul>
+    </ng-template>
+
 
     <!-- [ngIf] used without the star beacuse you need to bind with several properties -->
     <ng-template [ngIf]="authService.isAuthenticated()">

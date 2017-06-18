@@ -1,8 +1,8 @@
 import * as firebase from 'firebase';
 import {Subject} from "rxjs/Subject";
 
-
 export class AuthService {
+
   error = new Subject<any>();
   response = new Subject<any>();
   signInRes = new Subject<any>();
