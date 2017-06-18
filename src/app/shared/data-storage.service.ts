@@ -18,13 +18,8 @@ export class DataStorageService {
  }
 
  getRecipes() {
-   let tk = '';
-   this.authService.getToken()
-     .then(
-       (token: string) => {
-         tk = token;
-       }
-     );
+   this.authService.getToken();
+
    this.http.get('https://cook-book-5a0b1.firebaseio.com/recipes.json')
      .map(
        (response: Response) => {

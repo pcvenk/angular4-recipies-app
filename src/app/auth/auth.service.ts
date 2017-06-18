@@ -7,6 +7,7 @@ export class AuthService {
   response = new Subject<any>();
   signInRes = new Subject<any>();
   signInErr = new Subject<any>();
+  token: string;
 
   signUp(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -27,7 +28,13 @@ export class AuthService {
       .then(
         (res) => {
           console.log(res);
-          this.signInRes.next(`${res['email']} successfully signed in!`)
+          this.signInRes.next(`${res['email']} successfully signed in!`);
+          firebase.auth().currentUser.getToken()
+            .then(
+              (token: string) => {
+                this.token = token;
+              }
+            );
         }
       )
       .catch(
@@ -39,6 +46,12 @@ export class AuthService {
   }
 
   getToken() {
-    return firebase.auth().currentUser.getToken();
+    firebase.auth().currentUser.getToken()
+      .then(
+        (token: string) => {
+          this.token = token;
+        }
+      );
+      return this.token;
   }
 }
