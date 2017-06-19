@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Injectable, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 
@@ -10,6 +10,8 @@ import { RecipeService } from '../recipies.service';
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css']
 })
+
+@Injectable()
 export class RecipeListComponent implements OnInit, OnDestroy {
   recipes: Recipe[];
   id: number;
@@ -30,7 +32,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   }
 
   onAddNew() {
-    this.router.navigate(['new'], {relativeTo: this.route});
+      this.router.navigate(['new'], {relativeTo: this.route});
   }
 
   ngOnDestroy() {
