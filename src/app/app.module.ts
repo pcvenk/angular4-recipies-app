@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RecipesModule} from "./recipies/recipes.module";
+import {AppRoutingModule} from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -32,7 +33,8 @@ import {AuthGuard} from "./auth/auth-guard.service";
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RecipesModule
+    RecipesModule,
+    AppRoutingModule
 
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
