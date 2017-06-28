@@ -8,7 +8,9 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'recipes', loadChildren: './recipies/recipes.module#RecipesModule'},
-  {path: 'shopping-list', component: ShoppingListComponent}
+  {path: 'shopping-list', component: ShoppingListComponent},
+  {path: '**', redirectTo: '/home'}
+//  todo create a 404 page
 ];
 
 @NgModule({
