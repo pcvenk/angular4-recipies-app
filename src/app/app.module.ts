@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import {RecipesModule} from "./recipies/recipes.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {ShoppingListModule} from "./shopping-list/shopping-list.module";
 import {SharedModule} from "./shared/shared.module";
@@ -27,7 +26,6 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    RecipesModule,
     AppRoutingModule,
     SharedModule,
     ShoppingListModule,
